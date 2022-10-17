@@ -1,0 +1,38 @@
+---
+
+- name: Remove chart
+  kubernetes.core.helm:
+    name: "{{ helm_name }}"
+    release_namespace: "{{ helm_release_namespace }}"
+    wait: "{{ helm_wait }}"
+    state: absent
+    binary_path: "{{ helm_binary_path }}"
+    context: "{{ helm_context }}"
+    kubeconfig: "{{ helm_kubeconfig }}"
+    validate_certs: "{{ helm_validate_certs }}"
+
+- name: List helm release secret
+  kubernetes.core.k8s_info:
+    api_version: v1
+    kind: Secret
+    namespace: "{{ helm_release_namespace }}"
+    context: "{{ helm_context }}"
+    kubeconfig: "{{ helm_kubeconfig }}"
+    validate_certs: "{{ helm_validate_certs }}"
+  register: secret_list
+
+- name: List of helm release secret
+  set_fact:
+    helm_release_secret_list: "{{ secret_list['resources'] | map(attribute='metadata')  | map(attribute='name') | map('regex_search','.*helm.*{{ helm_name }}.*') | select('string') | list }}"
+
+- name: delete list release secret
+  kubernetes.core.k8s:
+    state: absent
+    api_version: v1
+    kind: Secret
+    namespace: "{{ helm_release_namespace }}"
+    name: "{{ item }}"
+    context: "{{ helm_context }}"
+    kubeconfig: "{{ helm_kubeconfig }}"
+    validate_certs: "{{ helm_validate_certs }}"
+  with_items: "{{ helm_release_secret_list }}"

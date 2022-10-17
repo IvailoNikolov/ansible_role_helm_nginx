@@ -1,0 +1,17 @@
+---
+- name: Print some debug information 
+  debug: 
+    msg: "{{role_path}}/install_prereq.yaml"
+
+# - name: Check and install pre requisites
+#   import_tasks: "{{role_path}}/install_prereq.yaml"
+
+# - name: "Deploy chart {{ helm_name }} from {{ helm_chart_repo_url }} in version {{ helm_chart_version }} on namespace {{ helm_release_namespace }}"
+#   block:
+#     - name: install chart sub tasks
+#       import_tasks: "{{role_path}}/install_sub_tasks.yaml"
+#   rescue:
+#     - name: remove chart sub tasks
+#       import_tasks: "{{role_path}}/helm_remove.yaml"
+#     - name: install chart sub tasks retry
+#       import_tasks: "{{role_path}}/install_sub_tasks.yaml"

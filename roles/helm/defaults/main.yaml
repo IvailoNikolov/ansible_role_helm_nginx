@@ -1,0 +1,19 @@
+helm_name: "nginx-bitnami"
+helm_chart_repo_url: "https://charts.bitnami.com/bitnami"
+helm_chart_version: "13.2.10"
+helm_chart_ref: nginx
+helm_release_namespace: nginx-bitnami
+helm_create_namespace: True
+helm_values: |
+  replicaCount: 2
+helm_values_files: []
+helm_wait: True
+helm_disable_hook: "no"
+helm_force: "no"
+helm_atomic: "no"
+helm_skip_crds: "no"
+helm_update_repo_cache: "no"
+helm_binary_path: "/usr/local/bin"
+helm_context: default
+helm_kubeconfig: "~/.kube/config"
+helm_validate_certs: "yes"

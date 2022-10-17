@@ -1,0 +1,3 @@
+---
+- name: "Remove chart {{ helm_name }} on namespace {{ helm_release_namespace }}"
+  import_tasks: "{{role_path}}/remove_sub_tasks.yaml"
