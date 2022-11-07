@@ -1,5 +1,0 @@
----
-- name: frantche.ansible_role_helm_wrapper
-  type: git
-  src: https://github.com/Frantche/ansible_role_helm_wrapper.git
-  version: main
