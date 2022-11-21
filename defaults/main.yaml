@@ -3,11 +3,11 @@ helm_nginx_chart_repo_url: "https://kubernetes.github.io/ingress-nginx"
 helm_nginx_chart_version: "latest"
 helm_nginx_chart_ref: ingress-nginx
 helm_nginx_release_namespace: nginx-ingress
-helm_nginx_create_namespace: True
+helm_nginx_create_namespace: true
 helm_nginx_values:
   replicaCount: 2
 helm_nginx_values_files: []
-helm_nginx_wait: True
+helm_nginx_wait: true
 helm_nginx_disable_hook: "no"
 helm_nginx_force: "no"
 helm_nginx_atomic: "no"
