@@ -60,5 +60,5 @@ ansible-galaxy install -r ./requirements.yml
 - hosts: master[0]
   serial: 1
   roles:
-  - role: frantchenco.ansible_role_helm_nginx_nginx_ingress
+  - role: frantchenco.ansible_role_helm_nginx_ingress
 ```
