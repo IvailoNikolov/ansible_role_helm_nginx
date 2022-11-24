@@ -2,6 +2,22 @@
 
 [![Ansible Lint](https://github.com/Frantche/ansible_role_helm_nginx/actions/workflows/ansible-lint.yml/badge.svg)](https://github.com/Frantche/ansible_role_helm_nginx/actions/workflows/ansible-lint.yml)
 
+## Description
+
+Installs nginx ingress helm chart on kubernetes cluster using helm
+
+## Requirements
+
+create a file name "requirements.yml"
+```yaml
+---
+collections:
+    - name: kubernetes.core
+      version: 2.3.2
+    - name: git+https://github.com/Frantche/ansible_collection_helm_wrapper.git,main
+```
+
+## Roles variables
 
 This Ansible Role aim to ease the use of helm chart with ansible by providing a fine wrapper around Helm installation and deletion from a kubernetes cluster.
 
@@ -32,3 +48,13 @@ The ansible role is only compatible with kubernetes cluster configured via kubec
 | helm_install_prereq    | Check all pre requisites software are installed on the host who will perform command                                | True                               |
 
 
+### Playbook example
+
+
+```yaml
+---
+- hosts: master[0]
+  serial: 1
+  roles:
+  - role: frantchenco.ansible_role_helm_nginx_ingress
+```
