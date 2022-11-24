@@ -1,6 +1,6 @@
 # ansible Role Helm Nginx
 
-[![Ansible Lint](https://github.com/Frantche/ansible_role_helm_nginx_nginx/actions/workflows/ansible-lint.yml/badge.svg)](https://github.com/Frantche/ansible_role_helm_nginx_nginx/actions/workflows/ansible-lint.yml)
+[![Ansible Lint](https://github.com/Frantche/ansible_role_helm_nginx/actions/workflows/ansible-lint.yml/badge.svg)](https://github.com/Frantche/ansible_role_helm_nginx/actions/workflows/ansible-lint.yml)
 
 ## Description
 
