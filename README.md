@@ -19,12 +19,6 @@ collections:
 
 ## Roles variables
 
-This Ansible Role aim to ease the use of helm chart with ansible by providing a fine wrapper around Helm installation and deletion from a kubernetes cluster.
-
-The default value will install the Nginx helm chart from Bitnami with a replica set to two.
-
-The ansible role is only compatible with kubernetes cluster configured via kubeconf file.
-
 | Name                   | Description                                                                                                         | Value                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
 | helm_nginx_name              | Release name to manage.                                                                                             | nginx-bitnami                      |
