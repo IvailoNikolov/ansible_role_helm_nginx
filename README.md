@@ -6,17 +6,6 @@
 
 Installs nginx ingress helm chart on kubernetes cluster using helm
 
-## Requirements
-
-create a file name "requirements.yml"
-```yaml
----
-collections:
-    - name: kubernetes.core
-      version: 2.3.2
-    - name: git+https://github.com/Frantche/ansible_collection_helm_nginx_wrapper.git,main
-```
-
 ## Roles variables
 
 | Name                   | Description                                                                                                         | Value                              |
@@ -41,8 +30,27 @@ collections:
 | helm_nginx_validate_certs    | Whether or not to verify the API server’s SSL certificates.                                                         | "yes"                              |
 | helm_nginx_install_prereq    | Check all pre requisites software are installed on the host who will perform command                                | True                               |
 
+## Requirements
 
-### Playbook example
+create a file name "requirements.yml"
+```yaml
+---
+collections:
+    - name: kubernetes.core
+      version: 2.3.2
+    - name: git+https://github.com/Frantche/ansible_collection_helm_nginx_wrapper.git,main
+roles:
+  - name: frantchenco.ansible_role_helm_nginx_ingress
+    type: git
+    src: https://github.com/Frantche/ansible_role_helm_nginx.git
+    version: main
+```
+
+```bash
+ansible-galaxy install -r ./requirements.yml
+```
+
+## Playbook example
 
 
 ```yaml
