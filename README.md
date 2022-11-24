@@ -21,11 +21,11 @@ collections:
 
 | Name                   | Description                                                                                                         | Value                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| helm_nginx_name              | Release name to manage.                                                                                             | nginx-bitnami                      |
-| helm_nginx_chart_repo_url    | Chart repository URL where to locate the requested chart.                                                           | https://charts.bitnami.com/bitnami |
-| helm_nginx_chart_version     | Chart version to install. If this is not specified, the latest version is installed.                                | 13.2.10                            |
-| helm_nginx_chart_ref         | chart_reference on chart repository.                                                                                | nginx                              |
-| helm_nginx_release_namespace | Kubernetes namespace where the chart should be installed.                                                           | nginx-bitnami                      |
+| helm_nginx_name              | Release name to manage.                                                                                             | nginx                      |
+| helm_nginx_chart_repo_url    | Chart repository URL where to locate the requested chart.                                                           | https://kubernetes.github.io/ingress-nginx |
+| helm_nginx_chart_version     | Chart version to install. If this is not specified, the latest version is installed.                                | latest                            |
+| helm_nginx_chart_ref         | chart_reference on chart repository.                                                                                | ingress-nginx                              |
+| helm_nginx_release_namespace | Kubernetes namespace where the chart should be installed.                                                           | ingress-nginx                     |
 | helm_nginx_create_namespace  |                                                                                                                     | True                               |
 | helm_nginx_values            | Value to pass to chart.                                                                                             | replicaCount: 2                    |
 | helm_nginx_values_files      | Value files to pass to chart. Paths will be read from the target host’s filesystem, not the host running ansible.   | []                                 |
