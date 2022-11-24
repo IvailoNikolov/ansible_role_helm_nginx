@@ -1,4 +1,7 @@
-# ansible Role Helm Wrapper
+# ansible Role Helm Nginx
+
+[![Ansible Lint](https://github.com/Frantche/ansible_role_helm_nginx/actions/workflows/ansible-lint.yml/badge.svg)](https://github.com/Frantche/ansible_role_helm_nginx/actions/workflows/ansible-lint.yml)
+
 
 This Ansible Role aim to ease the use of helm chart with ansible by providing a fine wrapper around Helm installation and deletion from a kubernetes cluster.
 
