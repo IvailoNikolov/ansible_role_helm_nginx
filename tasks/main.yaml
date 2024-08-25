@@ -1,6 +1,6 @@
 ---
 - name: "Deploy Nginx ingress chart"
-  frantchenco.helm_wrapper.install:
+  ivailo.helm_wrapper.install:
     name: "{{ helm_nginx_name }}"
     chart_repo_url: "{{ helm_nginx_chart_repo_url }}"
     chart_version: "{{ helm_nginx_chart_version }}"
