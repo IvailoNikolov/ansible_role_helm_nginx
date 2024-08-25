@@ -40,11 +40,11 @@ create a file name "requirements.yml"
 collections:
     - name: kubernetes.core
       version: 2.3.2
-    - name: git+https://github.com/Frantche/ansible_collection_helm_wrapper.git,main
+    - name: git+https://github.com/IvailoNikolov/ansible_collection_helm_ingress.git master
 roles:
-  - name: frantchenco.ansible_role_helm_nginx
+  - name: ivailo.ansible_role_helm_nginx
     type: git
-    src: https://github.com/Frantche/ansible_role_helm_nginx.git
+    src: https://github.com/IvailoNikolov/ansible_role_helm_nginx.git
     version: main
 ```
 
@@ -62,5 +62,5 @@ ansible-galaxy install -r ./requirements.yml
 - hosts: master[0]
   serial: 1
   roles:
-  - role: frantchenco.ansible_role_helm_nginx
+  - role: ivailo.ansible_role_helm_nginx
 ```
